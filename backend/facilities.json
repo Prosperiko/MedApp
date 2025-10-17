@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "City Hospital",
+    "type": "General",
+    "specialization": ["Emergency", "Pediatrics"],
+    "lat": 6.5244,
+    "lng": 3.3792,
+    "contact": "08012345678",
+    "address": "123 Main St, Lagos"
+  },
+  {
+    "id": 2,
+    "name": "Sunshine Clinic",
+    "type": "Clinic",
+    "specialization": ["Cardiology"],
+    "lat": 6.5210,
+    "lng": 3.3670,
+    "contact": "08087654321",
+    "address": "45 Ade St, Lagos"
+  }
+]
