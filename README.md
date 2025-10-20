@@ -173,3 +173,9 @@ For questions or support, please contact: info@medapp.com
 ---
 
 **Note**: This is an MVP version. The map functionality uses placeholders and would require Google Maps API or similar service for production use. Hospital data is currently mock data stored in JavaScript - a real implementation would connect to healthcare provider APIs.
+
+```mermaid
+flowchart TD
+A([Landing Page]) --> B[Hospital Details]
+A --> C[Emergency Services]
+```
