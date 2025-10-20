@@ -15,6 +15,10 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path="/hospitals" element={<HospitalsPage/>} />
+        <Route path="/hospitals/:id" element={<HospitalDetailsPage />} /> 
+        <Route path="/emergency" element={<EmergencyPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/account" element={<MyAccountPage />} />
       </Routes>
      
     </Router>
