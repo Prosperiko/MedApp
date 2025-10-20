@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Services - MedApp</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚑</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="emergency.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <div>
+                    <h1>MEDICAL</h1>
+                    <p>DIRECTORY</p>
+                </div>
+            </div>
+            <nav class="nav">
+                <a href="index.html">HOME</a>
+                <a href="hospitals.html">HOSPITALS</a>
+                <a href="contact.html">CONTACT US</a>
+            </nav>
+            <div class="header-actions">
+                <button class="login-btn" onclick="window.location.href='auth.html'">
+                    <i class="fas fa-user"></i> LOGIN
+                </button></invoke>
+<invoke name="strReplace">
+<parameter name="oldStr">            <nav class="nav">
+                <a href="index.html">HOME</a>
+                <a href="hospitals.html">HOSPITALS</a>
+                <a href="contact.html" class="active">CONTACT US</a>
+            </nav>     <nav class="nav">
+                <a href="index.html">HOME</a>
+                <a href="hospitals.html">HOSPITALS</a>
+                <a href="contact.html" class="active">CONTACT US</a>
+                <a href="hospital-dashboard.html">HOSPITAL LOGIN</a>
+            </nav>
+            <div class="header-actions">
+                <button class="emergency-btn active">
+                    <i class="fas fa-ambulance"></i> EMERGENCY
+                </button>
+
+                <div class="user-profile" id="userProfile" style="display: none;">
+                    <div class="profile-avatar" onclick="toggleProfileMenu()">
+                        <img src="https://ui-avatars.com/api/?name=John+Doe&background=00a8e8&color=fff" alt="User" id="userAvatar">
+                    </div>
+                    <div class="profile-dropdown" id="profileDropdown">
+                        <a href="my-account.html"><i class="fas fa-user"></i> My Account</a>
+                        <a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Emergency Hero -->
+    <section class="emergency-hero">
+        <div class="container">
+            <div class="emergency-alert">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h1>Emergency Services</h1>
+                <p>Get immediate help when you need it most</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="quick-actions">
+        <div class="container">
+            <h2>Quick Emergency Actions</h2>
+            <div class="actions-grid">
+                <div class="action-card urgent" onclick="call911()">
+                    <i class="fas fa-phone-volume"></i>
+                    <h3>Call 911</h3>
+                    <p>For life-threatening emergencies</p>
+                    <button class="action-button">Call Now</button>
+                </div>
+                
+                <div class="action-card" onclick="findNearestER()">
+                    <i class="fas fa-hospital"></i>
+                    <h3>Nearest ER</h3>
+                    <p>Find closest emergency room</p>
+                    <button class="action-button">Find ER</button>
+                </div>
+                
+                <div class="action-card" onclick="callAmbulance()">
+                    <i class="fas fa-ambulance"></i>
+                    <h3>Request Ambulance</h3>
+                    <p>Emergency transport service</p>
+                    <button class="action-button">Request</button>
+                </div>
+                
+                <div class="action-card" onclick="poisonControl()">
+                    <i class="fas fa-flask"></i>
+                    <h3>Poison Control</h3>
+                    <p>1-800-222-1222</p>
+                    <button class="action-button">Call</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nearest Emergency Facilities -->
+    <section class="nearest-facilities">
+        <div class="container">
+            <h2><i class="fas fa-map-marker-alt"></i> Nearest Emergency Facilities</h2>
+            <div id="emergencyFacilities" class="facilities-list">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Guidelines -->
+    <section class="emergency-guidelines">
+        <div class="container">
+            <h2><i class="fas fa-info-circle"></i> When to Call 911</h2>
+            <div class="guidelines-grid">
+                <div class="guideline-card">
+                    <i class="fas fa-heart-broken"></i>
+                    <h3>Cardiac Emergency</h3>
+                    <ul>
+                        <li>Chest pain or pressure</li>
+                        <li>Difficulty breathing</li>
+                        <li>Irregular heartbeat</li>
+                        <li>Loss of consciousness</li>
+                    </ul>
+                </div>
+                
+                <div class="guideline-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Stroke Symptoms</h3>
+                    <ul>
+                        <li>Face drooping</li>
+                        <li>Arm weakness</li>
+                        <li>Speech difficulty</li>
+                        <li>Sudden confusion</li>
+                    </ul>
+                </div>
+                
+                <div class="guideline-card">
+                    <i class="fas fa-user-injured"></i>
+                    <h3>Severe Injury</h3>
+                    <ul>
+                        <li>Heavy bleeding</li>
+                        <li>Broken bones</li>
+                        <li>Head trauma</li>
+                        <li>Severe burns</li>
+                    </ul>
+                </div>
+                
+                <div class="guideline-card">
+                    <i class="fas fa-allergies"></i>
+                    <h3>Allergic Reaction</h3>
+                    <ul>
+                        <li>Difficulty breathing</li>
+                        <li>Swelling of face/throat</li>
+                        <li>Rapid pulse</li>
+                        <li>Dizziness or fainting</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Contacts -->
+    <section class="emergency-contacts">
+        <div class="container">
+            <h2><i class="fas fa-address-book"></i> Important Emergency Contacts</h2>
+            <div class="contacts-grid">
+                <div class="contact-box">
+                    <i class="fas fa-phone-alt"></i>
+                    <h4>Emergency Services</h4>
+                    <a href="tel:911" class="contact-number">911</a>
+                </div>
+                
+                <div class="contact-box">
+                    <i class="fas fa-flask"></i>
+                    <h4>Poison Control</h4>
+                    <a href="tel:18002221222" class="contact-number">1-800-222-1222</a>
+                </div>
+                
+                <div class="contact-box">
+                    <i class="fas fa-comment-medical"></i>
+                    <h4>Crisis Hotline</h4>
+                    <a href="tel:988" class="contact-number">988</a>
+                </div>
+                
+                <div class="contact-box">
+                    <i class="fas fa-hospital-user"></i>
+                    <h4>Non-Emergency</h4>
+                    <a href="tel:311" class="contact-number">311</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <div class="logo">
+                    <i class="fas fa-heartbeat"></i>
+                    <div>
+                        <h3>MEDICAL</h3>
+                        <p>DIRECTORY</p>
+                    </div>
+                </div>
+                <p><i class="fas fa-map-marker-alt"></i> 3481 Fifth Avenue, New York</p>
+                <p><i class="fas fa-phone"></i> +1 (0) 000 0000 001</p>
+                <p><i class="fas fa-phone"></i> +44 (0)20 7123 4567</p>
+                <p><i class="fas fa-envelope"></i> info@example.com</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>LATEST HOSPITAL</h4>
+                <div class="footer-list">
+                    <div class="footer-item">
+                        <img src="https://via.placeholder.com/50" alt="Hospital">
+                        <div>
+                            <h5>Calvary Hospital</h5>
+                            <p>Cardiology</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>RECENTLY JOINED</h4>
+                <div class="footer-list">
+                    <div class="footer-item">
+                        <img src="https://via.placeholder.com/50" alt="Doctor">
+                        <div>
+                            <h5>Dr. Magdy Sharek</h5>
+                            <p>Joined Dec 12, 2015</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>NEWSLETTER</h4>
+                <p>Sign up to our newsletter to receive our latest news and updates. We do not spam.</p>
+                <input type="email" placeholder="info@example.com" class="newsletter-input">
+                <button class="subscribe-btn">SUBSCRIBE</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; Copyright 2024 Medical Directory. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="auth.js"></script>
+    <script src="emergency.js"></script>
+</body>
+</html>
