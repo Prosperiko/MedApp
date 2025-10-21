@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospitals Directory - MedApp</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="hospitals.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <div>
+                    <h1>MEDICAL</h1>
+                    <p>DIRECTORY</p>
+                </div>
+            </div>
+            <nav class="nav">
+                <a href="index.html">HOME</a>
+                <a href="hospitals.html" class="active">HOSPITALS</a>
+                <a href="#contact">CONTACT US</a>
+            </nav>
+            <div class="header-actions">
+                <button class="login-btn" onclick="window.location.href='auth.html'">
+                    <i class="fas fa-user"></i> LOGIN
+                </button>
+                <button class="emergency-btn" onclick="handleEmergency()">
+                    <i class="fas fa-ambulance"></i> EMERGENCY
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Hospitals Directory</h1>
+            <p>Find the best healthcare facilities near you</p>
+        </div>
+    </section>
+
+    <!-- Advanced Search Section -->
+    <section class="advanced-search-section">
+        <div class="container">
+            <div class="search-card">
+                <h2>Search Hospitals</h2>
+                <div class="advanced-search-grid">
+                    <div class="search-group">
+                        <label for="searchLocation">Location</label>
+                        <input type="text" id="searchLocation" placeholder="Enter city or zip code" class="search-input">
+                    </div>
+                    <div class="search-group">
+                        <label for="searchState">State</label>
+                        <select id="searchState" class="search-input">
+                            <option value="">All States</option>
+                            <option value="NY">New York</option>
+                            <option value="CA">California</option>
+                            <option value="TX">Texas</option>
+                            <option value="FL">Florida</option>
+                            <option value="IL">Illinois</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="OH">Ohio</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MN">Minnesota</option>
+                        </select>
+                    </div>
+                    <div class="search-group">
+                        <label for="searchSpecialization">Specialization</label>
+                        <select id="searchSpecialization" class="search-input">
+                            <option value="">All Specializations</option>
+                            <option value="cardiology">Cardiology</option>
+                            <option value="neurology">Neurology</option>
+                            <option value="orthopedics">Orthopedics</option>
+                            <option value="pediatrics">Pediatrics</option>
+                            <option value="oncology">Oncology</option>
+                            <option value="emergency">Emergency Medicine</option>
+                            <option value="surgery">General Surgery</option>
+                        </select>
+                    </div>
+                    <div class="search-group">
+                        <label for="searchKeyword">Keyword</label>
+                        <input type="text" id="searchKeyword" placeholder="Hospital name or keyword" class="search-input">
+                    </div>
+                </div>
+                <button class="search-submit-btn" onclick="performSearch()">
+                    <i class="fas fa-search"></i> Search Hospitals
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section">
+        <div class="container">
+            <div class="results-header">
+                <h2>Search Results</h2>
+                <div class="results-count">
+                    <span id="resultsCount">8</span> hospitals found
+                </div>
+            </div>
+
+            <div class="results-grid" id="resultsGrid">
+                <!-- Results will be populated by JavaScript -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="page-btn" disabled><i class="fas fa-chevron-left"></i></button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <div class="logo">
+                    <i class="fas fa-heartbeat"></i>
+                    <div>
+                        <h3>MEDICAL</h3>
+                        <p>DIRECTORY</p>
+                    </div>
+                </div>
+                <p><i class="fas fa-map-marker-alt"></i> 3481 Fifth Avenue, New York</p>
+                <p><i class="fas fa-phone"></i> +1 (0) 000 0000 001</p>
+                <p><i class="fas fa-phone"></i> +44 (0)20 7123 4567</p>
+                <p><i class="fas fa-envelope"></i> info@example.com</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>LATEST HOSPITAL</h4>
+                <div class="footer-list">
+                    <div class="footer-item">
+                        <img src="https://via.placeholder.com/50" alt="Hospital">
+                        <div>
+                            <h5>Calvary Hospital</h5>
+                            <p>Cardiology</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>RECENTLY JOINED</h4>
+                <div class="footer-list">
+                    <div class="footer-item">
+                        <img src="https://via.placeholder.com/50" alt="Doctor">
+                        <div>
+                            <h5>Dr. Magdy Sharek</h5>
+                            <p>Joined Dec 12, 2015</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>NEWSLETTER</h4>
+                <p>Sign up to our newsletter to receive our latest news and updates. We do not spam.</p>
+                <input type="email" placeholder="info@example.com" class="newsletter-input">
+                <button class="subscribe-btn">SUBSCRIBE</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; Copyright 2024 Medical Directory. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="auth.js"></script>
+    <script src="hospitals.js"></script>
+</body>
+</html>

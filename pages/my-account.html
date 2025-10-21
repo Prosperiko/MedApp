@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - MedApp</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="account.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <div>
+                    <h1>MEDICAL</h1>
+                    <p>DIRECTORY</p>
+                </div>
+            </div>
+            <nav class="nav">
+                <a href="index.html">HOME</a>
+                <a href="hospitals.html">HOSPITALS</a>
+                <a href="contact.html">CONTACT US</a>
+                <a href="my-account.html" class="active">MY ACCOUNT</a>
+            </nav>
+            <div class="header-actions">
+                <button class="logout-btn" onclick="handleLogout()">
+                    <i class="fas fa-sign-out-alt"></i> LOGOUT
+                </button>
+                <button class="emergency-btn" onclick="window.location.href='emergency.html'">
+                    <i class="fas fa-ambulance"></i> EMERGENCY
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Account Section -->
+    <section class="account-section">
+        <div class="container">
+            <div class="account-header">
+                <div class="user-info">
+                    <img src="https://via.placeholder.com/80" alt="User" class="user-avatar">
+                    <div>
+                        <h1>John Doe</h1>
+                        <p>Patient Account</p>
+                        <span class="member-since">Member since January 2024</span>
+                    </div>
+                </div>
+                <button class="edit-profile-btn">
+                    <i class="fas fa-edit"></i> Edit Profile
+                </button>
+            </div>
+
+            <div class="account-grid">
+                <!-- Quick Stats -->
+                <div class="stats-section">
+                    <h2>Quick Overview</h2>
+                    <div class="stats-cards">
+                        <div class="stat-card">
+                            <i class="fas fa-calendar-check"></i>
+                            <div>
+                                <h3>12</h3>
+                                <p>Appointments</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-heart"></i>
+                            <div>
+                                <h3>3</h3>
+                                <p>Favorite Hospitals</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-file-medical"></i>
+                            <div>
+                                <h3>8</h3>
+                                <p>Medical Records</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="activity-section">
+                    <h2>Recent Activity</h2>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <i class="fas fa-calendar-plus"></i>
+                            <div>
+                                <p><strong>Appointment booked</strong></p>
+                                <span>Calvary Hospital - Dr. Smith</span>
+                                <small>2 days ago</small>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <i class="fas fa-star"></i>
+                            <div>
+                                <p><strong>Review submitted</strong></p>
+                                <span>Mount Sinai Hospital - 5 stars</span>
+                                <small>1 week ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Account Actions -->
+            <div class="account-actions">
+                <div class="action-card">
+                    <i class="fas fa-search"></i>
+                    <h3>Find Hospitals</h3>
+                    <p>Search for hospitals and clinics near you</p>
+                    <button onclick="window.location.href='index.html'">Search Now</button>
+                </div>
+                <div class="action-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Book Appointment</h3>
+                    <p>Schedule your next medical appointment</p>
+                    <button onclick="alert('Booking feature coming soon!')">Book Now</button>
+                </div>
+                <div class="action-card">
+                    <i class="fas fa-file-medical-alt"></i>
+                    <h3>Medical Records</h3>
+                    <p>View and manage your health records</p>
+                    <button onclick="alert('Medical records feature coming soon!')">View Records</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <div class="logo">
+                    <i class="fas fa-heartbeat"></i>
+                    <div>
+                        <h3>MEDICAL</h3>
+                        <p>DIRECTORY</p>
+                    </div>
+                </div>
+                <p><i class="fas fa-map-marker-alt"></i> 3481 Fifth Avenue, New York</p>
+                <p><i class="fas fa-phone"></i> +1 (0) 000 0000 001</p>
+                <p><i class="fas fa-phone"></i> +44 (0)20 7123 4567</p>
+                <p><i class="fas fa-envelope"></i> info@example.com</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>LATEST HOSPITAL</h4>
+                <div class="footer-list">
+                    <div class="footer-item">
+                        <img src="https://via.placeholder.com/50" alt="Hospital">
+                        <div>
+                            <h5>Calvary Hospital</h5>
+                            <p>Cardiology</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>RECENTLY JOINED</h4>
+                <div class="footer-list">
+                    <div class="footer-item">
+                        <img src="https://via.placeholder.com/50" alt="Doctor">
+                        <div>
+                            <h5>Dr. Magdy Sharek</h5>
+                            <p>Joined Dec 12, 2015</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>NEWSLETTER</h4>
+                <p>Sign up to our newsletter to receive our latest news and updates. We do not spam.</p>
+                <input type="email" placeholder="info@example.com" class="newsletter-input">
+                <button class="subscribe-btn">SUBSCRIBE</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; Copyright 2024 Medical Directory. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>    <scrip
+t>
+        function handleLogout() {
+            if (confirm('Are you sure you want to logout?')) {
+                // Clear any stored user data
+                localStorage.removeItem('userSession');
+                sessionStorage.clear();
+                
+                // Redirect to home page
+                window.location.href = 'index.html';
+            }
+        }
+    </script>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Dashboard - MedApp</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Dashboard Header -->
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <div>
+                    <h1>MEDICAL</h1>
+                    <p>DIRECTORY</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <div class="notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </div>
+                <div class="user-profile">
+                    <img src="https://via.placeholder.com/40" alt="Hospital Admin" class="profile-avatar">
+                    <div class="profile-info">
+                        <span class="hospital-name">Calvary Hospital</span>
+                        <span class="admin-role">Administrator</span>
+                    </div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <nav class="sidebar-nav">
+                <a href="#overview" class="nav-item active">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Overview</span>
+                </a>
+                <a href="#appointments" class="nav-item">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Appointments</span>
+                </a>
+                <a href="#patients" class="nav-item">
+                    <i class="fas fa-users"></i>
+                    <span>Patients</span>
+                </a>
+                <a href="#services" class="nav-item">
+                    <i class="fas fa-stethoscope"></i>
+                    <span>Services</span>
+                </a>
+                <a href="#staff" class="nav-item">
+                    <i class="fas fa-user-md"></i>
+                    <span>Staff</span>
+                </a>
+                <a href="#analytics" class="nav-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analytics</span>
+                </a>
+                <a href="#reviews" class="nav-item">
+                    <i class="fas fa-star"></i>
+                    <span>Reviews</span>
+                </a>
+                <a href="#settings" class="nav-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+                <div class="nav-divider"></div>
+                <a href="index.html" class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>Public Site</span>
+                </a>
+                <a href="#logout" class="nav-item logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Overview Section -->
+            <section id="overview" class="dashboard-section active">
+                <div class="section-header">
+                    <h2>Dashboard Overview</h2>
+                    <div class="date-filter">
+                        <select class="filter-select">
+                            <option>Last 7 days</option>
+                            <option>Last 30 days</option>
+                            <option>Last 3 months</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon appointments">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>247</h3>
+                            <p>Total Appointments</p>
+                            <span class="stat-change positive">+12% from last week</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon patients">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>1,834</h3>
+                            <p>Total Patients</p>
+                            <span class="stat-change positive">+8% from last week</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon revenue">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>$45,230</h3>
+                            <p>Monthly Revenue</p>
+                            <span class="stat-change positive">+15% from last month</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon rating">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>4.8</h3>
+                            <p>Average Rating</p>
+                            <span class="stat-change neutral">Same as last week</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts and Recent Activity -->
+                <div class="dashboard-grid">
+                    <div class="chart-card">
+                        <h3>Appointment Trends</h3>
+                        <div class="chart-placeholder">
+                            <i class="fas fa-chart-line"></i>
+                            <p>Chart showing appointment trends over time</p>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-card">
+                        <h3>Recent Activity</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-user-plus"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <p><strong>New patient registered</strong></p>
+                                    <span>John Smith - 2 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-calendar"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <p><strong>Appointment scheduled</strong></p>
+                                    <span>Dr. Johnson - 4 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <p><strong>New 5-star review</strong></p>
+                                    <span>Sarah Wilson - 6 hours ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hospital Setup Section -->
+            <section id="setup" class="dashboard-section">
+                <div class="section-header">
+                    <h2>Hospital Setup</h2>
+                    <p>Complete your hospital profile to get started</p>
+                </div>
+
+                <div class="setup-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 60%"></div>
+                    </div>
+                    <span class="progress-text">60% Complete</span>
+                </div>
+
+                <div class="setup-steps">
+                    <div class="setup-step completed">
+                        <div class="step-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3>Basic Information</h3>
+                            <p>Hospital name, address, and contact details</p>
+                        </div>
+                        <button class="step-action">Edit</button>
+                    </div>
+
+                    <div class="setup-step completed">
+                        <div class="step-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3>Services & Specialties</h3>
+                            <p>Add your medical services and specializations</p>
+                        </div>
+                        <button class="step-action">Edit</button>
+                    </div>
+
+                    <div class="setup-step active">
+                        <div class="step-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3>Operating Hours</h3>
+                            <p>Set your hospital's operating schedule</p>
+                        </div>
+                        <button class="step-action primary">Complete</button>
+                    </div>
+
+                    <div class="setup-step">
+                        <div class="step-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3>Staff Members</h3>
+                            <p>Add doctors and medical staff</p>
+                        </div>
+                        <button class="step-action">Start</button>
+                    </div>
+
+                    <div class="setup-step">
+                        <div class="step-icon">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3>Photos & Media</h3>
+                            <p>Upload hospital photos and virtual tour</p>
+                        </div>
+                        <button class="step-action">Start</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <button class="quick-action-btn" onclick="showSection('appointments')">
+                    <i class="fas fa-plus"></i>
+                    <span>New Appointment</span>
+                </button>
+                <button class="quick-action-btn" onclick="showSection('patients')">
+                    <i class="fas fa-user-plus"></i>
+                    <span>Add Patient</span>
+                </button>
+                <button class="quick-action-btn" onclick="showSection('staff')">
+                    <i class="fas fa-user-md"></i>
+                    <span>Add Staff</span>
+                </button>
+                <button class="quick-action-btn" onclick="showSection('settings')">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
