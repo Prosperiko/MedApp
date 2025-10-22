@@ -14,7 +14,7 @@ with open('facilities.json') as f:
 def home():
     return jsonify({"message": "MedApp Backend Running 🚀"})
 
-
+#jkhu
 @app.route('/facilities', methods=['GET'])
 def get_facilities():
     user_lat = float(request.args.get('lat', 6.5244))
